@@ -1,7 +1,7 @@
 __author__ = 'Administrator'
 
 from tkinter import *
-import time
+from tkinter import ttk
 import urllib
 
 from urllib.parse import *
@@ -49,7 +49,13 @@ text = Text(root, width=60, height=5)
 text.grid(row=1, column=1)
 text.bind("<Control-Key-a>", selectAll)
 
-mButton = Button(root, text='Decode', command=abc).grid(row=3, column=3)
-nButton = Button(root, text='Encode', command=cba).grid(row=3, column=0)
+style = ttk.Style()
+style.map("C.TButton",
+    foreground=[('pressed', 'red'), ('active', 'blue')],
+    background=[('pressed', '!disabled', 'black'), ('active', 'white')]
+    )
+
+mButton = ttk.Button(root, text='Decode', command=abc, style='C.TButton').grid(row=3, column=3)
+nButton = ttk.Button(root, text='Encode', command=cba, style='C.TButton').grid(row=4, column=3)
 
 root.mainloop()
