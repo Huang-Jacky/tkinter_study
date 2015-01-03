@@ -1,11 +1,20 @@
 __author__ = 'Administrator'
 
 from tkinter import *
-from datetime import *
+import time
 import urllib
 
 from urllib.parse import *
 
+
+#
+# def timez():
+#     t = 1
+#     while t != 0:
+#         t = time.ctime()
+#         root.title(str(t))
+#         root.update()
+#         time.sleep(1)
 
 def abc():
     aa = urllib.parse.unquote(ourl.get())
@@ -24,7 +33,7 @@ def selectAll(char):
     return 'break'
 
 root = Tk()
-root.title(datetime.now())
+root.title('URL Code Transformation')
 root.resizable(False, False)
 ourl = StringVar()
 
