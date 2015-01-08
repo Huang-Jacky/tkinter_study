@@ -15,24 +15,18 @@ import re
 #         root.update()
 #         time.sleep(1)
 
-def urlToChar():
-    aa = urllib.parse.unquote(ourl.get())
-    text.delete(0.0, END)
-    text.insert(INSERT, aa)
-
-
-def CharToUrl():
-    aa = urllib.parse.quote(ourl.get())
-    text.delete(0.0, END)
-    text.insert(INSERT, aa)
 
 
 def judge():
     rejudge=r'%\S\S%'
     if re.findall(rejudge,ourl.get()) != []:
-        urlToChar()
+        aa = urllib.parse.unquote(ourl.get())
+        text.delete(0.0, END)
+        text.insert(INSERT, aa)
     else:
-        CharToUrl()
+        aa = urllib.parse.quote(ourl.get())
+        text.delete(0.0, END)
+        text.insert(INSERT, aa)
         
 def clear():
     text.delete(0.0, END)
